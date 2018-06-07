@@ -32,7 +32,7 @@ class Filter extends PureComponent {
             {value.split('_')
               .map(str => str.charAt(0).toUpperCase() + str.substr(1).toLowerCase())
               .join(' ')}
-            <input onChange={this.handleChange} type="radio" name="filter" value={value} checked={value === this.props.active} />
+            <input onChange={this.handleChange} type="radio" name="filter" value={value} checked={value === this.props.active} /><br/>
           </label>  
         ))}
       </div>

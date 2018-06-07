@@ -16,6 +16,10 @@ constructor(props) {
 
 handleChange(event) {
   // console.log(event.target);
+  const labelInput = document.querySelector('input[name="label"]');
+  if (labelInput.value) {
+    labelInput.style.backgroundColor = "white";
+  }
   this.setState({
     value: event.target.value
   });
@@ -26,10 +30,15 @@ handleChange(event) {
 
 handleSubmit(event) {
   event.preventDefault();
-  this.props.onSubmit(
-    document.querySelector('input[name="label"]').value,
-    document.querySelector('textarea[name="description"]').value
-  );
+  const labelInput = document.querySelector('input[name="label"]');
+  if (labelInput.value) {
+    this.props.onSubmit(
+      labelInput.value,
+      document.querySelector('textarea[name="description"]').value
+    );
+  } else {
+    labelInput.style.backgroundColor = "red";
+  }
   // console.log(event.target);
 }
 
@@ -37,7 +46,7 @@ handleSubmit(event) {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Task *
-        <br/><input type="text" name="label" /></label>
+        <br /><input type="text" name="label" onChange={this.handleChange} /></label>
         <br/><label>Description
         <br/><textarea type="text" name="description" /></label>
         <br/><button type="submit">➕</button>

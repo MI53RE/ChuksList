@@ -9,18 +9,18 @@ export const SET_TODO = 'my-todo/TODOS/SET_TODO';
 
 const initial = {
   values: [
-    {
-      uuid: uuid(),
-      label: 'Finish TODO LIST',
-      description: 'Complete the current program then proceed to next task.',
-      done: false
-    },
-    {
-      uuid: uuid(),
-      label: 'Finish TODO LIST',
-      description: 'Complete the current program then proceed to next task.',
-      done: true
-    }
+    // {
+    //   uuid: uuid(),
+    //   label: 'Finish TODO LIST',
+    //   description: 'Complete the current program then proceed to next task.',
+    //   done: false
+    // },
+    // {
+    //   uuid: uuid(),
+    //   label: 'Finish TODO LIST',
+    //   description: 'Complete the current program then proceed to next task.',
+    //   done: true
+    // }
     ],
     page: 0
 };
